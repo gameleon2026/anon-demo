@@ -59,6 +59,23 @@
       padding: 16px;
       margin: 10px 0;
     }
+    .intro-card {
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .intro-card p {
+      margin: 0 0 8px;
+    }
+    .intro-list {
+      margin: 6px 0 0;
+      padding-left: 20px;
+    }
+    .intro-list li {
+      margin: 3px 0;
+    }
     .media {
       height: 260px;
       border-radius: 10px;
@@ -84,13 +101,13 @@
 <body>
   <main class="container">
     <h1>Gameleon: Gaussianizing Point Clouds for On-Demand 4D Performance Over the Air</h1>
-    <p class="muted">
-      This page presents the rendering speed and visual quality of the method
-      proposed in the paper, including static result demonstrations and dynamic
-      sequence rendering results. The static results support free-viewpoint
-      viewing, while dynamic sequences are shown as videos only due to web
-      resource constraints.
-    </p>
+    <div class="intro-card muted">
+      <p>This page presents the rendering speed and visual quality of the proposed method.</p>
+      <ul class="intro-list">
+        <li>Static results: support free-viewpoint viewing.</li>
+        <li>Dynamic sequences: shown as videos only due to web resource constraints.</li>
+      </ul>
+    </div>
 
     <section>
       <h2>Teaser</h2>
