@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anonymous Project Page (Placeholder)</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #666666;
+      --card: #f4f4f4;
+      --border: #dddddd;
+      --accent: #0b57d0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1115;
+        --fg: #f3f3f3;
+        --muted: #bbbbbb;
+        --card: #171a21;
+        --border: #2a2f3a;
+        --accent: #7aa2ff;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+    h1, h2 { line-height: 1.25; margin: 0 0 12px; }
+    h1 { font-size: 2rem; }
+    h2 { margin-top: 28px; font-size: 1.3rem; }
+    p { margin: 10px 0; }
+    .muted { color: var(--muted); }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.86rem;
+      color: var(--muted);
+      background: var(--card);
+      margin-bottom: 14px;
+    }
+    .card {
+      border: 1px dashed var(--border);
+      background: var(--card);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 10px 0;
+    }
+    .media {
+      height: 260px;
+      border-radius: 10px;
+      border: 1px dashed var(--border);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      background: transparent;
+      margin-top: 10px;
+    }
+    ul { padding-left: 20px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      margin-top: 36px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <span class="badge">Anonymous Submission Placeholder</span>
+    <h1>Project Title (Anonymous)</h1>
+    <p class="muted">
+      This is a temporary anonymous project page. Replace all placeholder text
+      and media with submission-safe content.
+    </p>
+
+    <section>
+      <h2>Teaser</h2>
+      <div class="media">[Teaser Image / Video Placeholder]</div>
+    </section>
+
+    <section>
+      <h2>Abstract (Placeholder)</h2>
+      <div class="card">
+        <p>
+          This section can be replaced with a short project summary. Keep the
+          content anonymous and consistent with the submission materials.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Qualitative Results</h2>
+      <div class="card">
+        <ul>
+          <li>Result set A (placeholder)</li>
+          <li>Result set B (placeholder)</li>
+          <li>Result set C (placeholder)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Downloads</h2>
+      <div class="card">
+        <p><a href="#">Paper (placeholder)</a></p>
+        <p><a href="#">Supplementary (placeholder)</a></p>
+        <p><a href="#">Video (placeholder)</a></p>
+      </div>
+    </section>
+
+    <footer>
+      Last updated: placeholder. No identifying information included.
+    </footer>
+  </main>
+</body>
+</html>
