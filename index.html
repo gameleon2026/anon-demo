@@ -583,9 +583,9 @@
 
         await splatViewer.addSplatScene("dataset/stable/test.ply", {
           showLoadingUI: false,
-          progressiveLoad: true,
-          rotation: [Math.PI, 0, 0]
+          progressiveLoad: true
         });
+        console.log(scene);
 
         splatViewer.start();
         status.remove();
