@@ -584,11 +584,10 @@
         await splatViewer.addSplatScene("dataset/stable/test.ply", {
           showLoadingUI: false,
           progressiveLoad: false,
-          // Tune initial presentation for this sample.
-          // If your exporter uses a different up-axis, flip/rotate here.
-          scale: [1.75, 1.75, 1.75],
-          rotation: [Math.PI, 0, 0],
-          position: [0, 0.08, 0]
+          // Keep default transform first; we can tune after stable display.
+          scale: [1, 1, 1],
+          rotation: [0, 0, 0],
+          position: [0, 0, 0]
         });
 
         splatViewer.start();
