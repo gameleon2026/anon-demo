@@ -4,13 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gameleon | Anonymous Project Page</title>
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.164.1/build/three.module.js"
-      }
-    }
-  </script>
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -297,29 +290,21 @@
       inset: 0;
       z-index: 1;
     }
-    .ply-viewer canvas {
+    .ply-viewer canvas,
+    .ply-viewer iframe {
       width: 100%;
       height: 100%;
       display: block;
+      border: 0;
     }
     .slot.ply-slot .slot-content {
       pointer-events: none;
     }
-    .viewer-status {
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 12px;
-      color: #d8e4ff;
-      font-size: 0.9rem;
-      background: rgba(10, 14, 28, 0.45);
-      pointer-events: none;
+    .slot.ply-slot .slot-content a {
+      pointer-events: auto;
+      position: relative;
+      z-index: 4;
     }
-
     .slot.static {
       aspect-ratio: 1 / 1;
       min-height: 280px;
@@ -455,10 +440,18 @@
           <div class="grid-static">
 
             <div class="slot static ply-slot" id="test-slot">
-              <div class="ply-viewer" id="test-viewer"></div>
+              <div class="ply-viewer">
+                <iframe
+                  id="supersplat-frame"
+                  title="test — SuperSplat viewer"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allow="fullscreen; xr-spatial-tracking"
+                ></iframe>
+              </div>
               <div class="slot-content">
                 <div class="slot-title">test</div>
-                <div class="slot-sub">dataset/stable/test.ply</div>
+                <div class="slot-sub">dataset/stable/test.ply · <a id="supersplat-open" href="#" target="_blank" rel="noopener">Open in SuperSplat</a></div>
               </div>
             </div>
 
@@ -557,42 +550,20 @@
 
   </main>
 
-  <script type="module">
-    const viewer = document.getElementById("test-viewer");
-    if (viewer) {
-      const status = document.createElement("div");
-      status.className = "viewer-status";
-      status.textContent = "Loading Gaussian renderer...";
-      viewer.appendChild(status);
+  <script>
+    (function () {
+      // SuperSplat (PlayCanvas) supports remote PLY via ?load= — see
+      // https://developer.playcanvas.com/user-manual/gaussian-splatting/editing/supersplat/
+      var frame = document.getElementById("supersplat-frame");
+      var openLink = document.getElementById("supersplat-open");
+      if (!frame || !openLink) return;
 
-      try {
-        const GaussianSplats3D = await import(
-          "https://unpkg.com/@mkkellogg/gaussian-splats-3d@0.4.7/build/gaussian-splats-3d.module.js"
-        );
+      var plyUrl = new URL("dataset/stable/test.ply", window.location.href).href;
+      var editorUrl = "https://superspl.at/editor?load=" + encodeURIComponent(plyUrl);
 
-        const splatViewer = new GaussianSplats3D.Viewer({
-          rootElement: viewer,
-          selfDrivenMode: true,
-          useBuiltInControls: true,
-          // GitHub Pages is not cross-origin isolated by default.
-          // Disable SharedArrayBuffer-dependent paths for compatibility.
-          gpuAcceleratedSort: false,
-          sharedMemoryForWorkers: false,
-          ignoreDevicePixelRatio: false
-        });
-
-        await splatViewer.addSplatScene("dataset/stable/test.ply", {
-          showLoadingUI: false,
-          progressiveLoad: true
-        });
-
-        splatViewer.start();
-        status.remove();
-      } catch (err) {
-        console.error("Failed to render Gaussian PLY:", err);
-        status.textContent = "Failed to load Gaussian renderer or test.ply.";
-      }
-    }
+      frame.src = editorUrl;
+      openLink.href = editorUrl;
+    })();
   </script>
 </body>
 </html>
