@@ -583,7 +583,8 @@
 
         await splatViewer.addSplatScene("dataset/stable/test.ply", {
           showLoadingUI: false,
-          progressiveLoad: true
+          progressiveLoad: true,
+          rotation: [Math.PI, 0, 0]
         });
 
         splatViewer.start();
