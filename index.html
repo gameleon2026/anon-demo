@@ -4,6 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gameleon | Anonymous Project Page</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.164.1/build/three.module.js"
+      }
+    }
+  </script>
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -225,7 +232,7 @@
 
     .grid-static {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
 
@@ -352,7 +359,6 @@
         grid-template-columns: 1fr;
       }
 
-      .grid-static,
       .grid-dynamic {
         grid-template-columns: repeat(2, 1fr);
       }
