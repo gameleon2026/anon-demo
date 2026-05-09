@@ -241,7 +241,7 @@
 
     .grid-dynamic {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
 
@@ -390,7 +390,8 @@
         padding-top: 70px;
       }
 
-      .grid-static {
+      .grid-static,
+      .grid-dynamic {
         grid-template-columns: 1fr;
       }
 
@@ -594,6 +595,13 @@
               <div class="slot-content">
                 <div class="slot-title">Test Sequence 03</div>
                 <div class="slot-sub">Name 03</div>
+              </div>
+            </div>
+
+            <div class="slot dynamic">
+              <div class="slot-content">
+                <div class="slot-title">Test Sequence 04</div>
+                <div class="slot-sub">Name 04</div>
               </div>
             </div>
 
