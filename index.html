@@ -574,7 +574,10 @@
           rootElement: viewer,
           selfDrivenMode: true,
           useBuiltInControls: true,
-          gpuAcceleratedSort: true,
+          // GitHub Pages is not cross-origin isolated by default.
+          // Disable SharedArrayBuffer-dependent paths for compatibility.
+          gpuAcceleratedSort: false,
+          sharedMemoryForWorkers: false,
           ignoreDevicePixelRatio: false
         });
 
