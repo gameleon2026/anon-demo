@@ -583,18 +583,14 @@
 
         await splatViewer.addSplatScene("dataset/stable/test.ply", {
           showLoadingUI: false,
-          progressiveLoad: false,
-          // Keep default transform first; we can tune after stable display.
-          scale: [1, 1, 1],
-          rotation: [0, 0, 0],
-          position: [0, 0, 0]
+          progressiveLoad: true
         });
 
         splatViewer.start();
         status.remove();
       } catch (err) {
         console.error("Failed to render Gaussian PLY:", err);
-        status.textContent = "Failed to load Gaussian renderer. Check console for details.";
+        status.textContent = "Failed to load Gaussian renderer or test.ply.";
       }
     }
   </script>
