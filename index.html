@@ -241,7 +241,7 @@
 
     .grid-dynamic {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
       gap: 20px;
     }
 
@@ -383,10 +383,6 @@
       .hero-card {
         grid-template-columns: 1fr;
       }
-
-      .grid-dynamic {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
     @media (max-width: 640px) {
@@ -394,8 +390,7 @@
         padding-top: 70px;
       }
 
-      .grid-static,
-      .grid-dynamic {
+      .grid-static {
         grid-template-columns: 1fr;
       }
 
