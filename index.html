@@ -443,8 +443,8 @@
             <div class="slot static ply-slot" id="test-slot">
               <div class="ply-viewer">
                 <iframe
-                  id="supersplat-frame"
-                  title="test — SuperSplat viewer"
+                  class="supersplat-frame"
+                  title="TEST 01 — SuperSplat viewer"
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
                   allow="fullscreen; xr-spatial-tracking"
@@ -452,42 +452,87 @@
               </div>
               <div class="slot-content">
                 <div class="slot-title">TEST 01</div>
-                <div class="slot-sub">Subject 01 · <a id="supersplat-open" href="#" target="_blank" rel="noopener">Open in a separate window</a></div>
+                <div class="slot-sub">dataset/stable/test.ply · <a class="supersplat-open" href="#" target="_blank" rel="noopener">Open in a separate window</a></div>
               </div>
             </div>
 
-            <div class="slot static">
+            <div class="slot static ply-slot">
+              <div class="ply-viewer">
+                <iframe
+                  class="supersplat-frame"
+                  title="TEST 02 — SuperSplat viewer"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allow="fullscreen; xr-spatial-tracking"
+                ></iframe>
+              </div>
               <div class="slot-content">
-                <div class="slot-title">Subject 02</div>
-                <div class="slot-sub">Name 02</div>
+                <div class="slot-title">TEST 02</div>
+                <div class="slot-sub">dataset/stable/test.ply · <a class="supersplat-open" href="#" target="_blank" rel="noopener">Open in a separate window</a></div>
               </div>
             </div>
 
-            <div class="slot static">
+            <div class="slot static ply-slot">
+              <div class="ply-viewer">
+                <iframe
+                  class="supersplat-frame"
+                  title="TEST 03 — SuperSplat viewer"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allow="fullscreen; xr-spatial-tracking"
+                ></iframe>
+              </div>
               <div class="slot-content">
-                <div class="slot-title">Subject 03</div>
-                <div class="slot-sub">Name 03</div>
+                <div class="slot-title">TEST 03</div>
+                <div class="slot-sub">dataset/stable/test.ply · <a class="supersplat-open" href="#" target="_blank" rel="noopener">Open in a separate window</a></div>
               </div>
             </div>
 
-            <div class="slot static">
+            <div class="slot static ply-slot">
+              <div class="ply-viewer">
+                <iframe
+                  class="supersplat-frame"
+                  title="TEST 04 — SuperSplat viewer"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allow="fullscreen; xr-spatial-tracking"
+                ></iframe>
+              </div>
               <div class="slot-content">
-                <div class="slot-title">Subject 04</div>
-                <div class="slot-sub">Name 04</div>
+                <div class="slot-title">TEST 04</div>
+                <div class="slot-sub">dataset/stable/test.ply · <a class="supersplat-open" href="#" target="_blank" rel="noopener">Open in a separate window</a></div>
               </div>
             </div>
 
-            <div class="slot static">
+            <div class="slot static ply-slot">
+              <div class="ply-viewer">
+                <iframe
+                  class="supersplat-frame"
+                  title="TEST 05 — SuperSplat viewer"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allow="fullscreen; xr-spatial-tracking"
+                ></iframe>
+              </div>
               <div class="slot-content">
-                <div class="slot-title">Subject 05</div>
-                <div class="slot-sub">Name 05</div>
+                <div class="slot-title">TEST 05</div>
+                <div class="slot-sub">dataset/stable/test.ply · <a class="supersplat-open" href="#" target="_blank" rel="noopener">Open in a separate window</a></div>
               </div>
             </div>
 
-            <div class="slot static">
+            <div class="slot static ply-slot">
+              <div class="ply-viewer">
+                <iframe
+                  class="supersplat-frame"
+                  title="TEST 06 — SuperSplat viewer"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allow="fullscreen; xr-spatial-tracking"
+                ></iframe>
+              </div>
               <div class="slot-content">
-                <div class="slot-title">Subject 06</div>
-                <div class="slot-sub">Name 06</div>
+                <div class="slot-title">TEST 06</div>
+                <div class="slot-sub">dataset/stable/test.ply · <a class="supersplat-open" href="#" target="_blank" rel="noopener">Open in a separate window</a></div>
               </div>
             </div>
 
@@ -555,9 +600,10 @@
     (function () {
       // SuperSplat (PlayCanvas) supports remote PLY via ?load= — see
       // https://developer.playcanvas.com/user-manual/gaussian-splatting/editing/supersplat/
-      var frame = document.getElementById("supersplat-frame");
-      var openLink = document.getElementById("supersplat-open");
-      if (!frame || !openLink) return;
+      // TODO: when replacing assets per slot, point each iframe at its own PLY URL instead of one shared URL.
+      var frames = document.querySelectorAll(".supersplat-frame");
+      var openLinks = document.querySelectorAll(".supersplat-open");
+      if (!frames.length) return;
 
       var plyUrl = new URL("dataset/stable/test.ply", window.location.href).href;
       var editor = new URL("https://superspl.at/editor");
@@ -565,8 +611,12 @@
       editor.searchParams.set("lng", "en");
       var editorUrl = editor.toString();
 
-      frame.src = editorUrl;
-      openLink.href = editorUrl;
+      frames.forEach(function (frame) {
+        frame.src = editorUrl;
+      });
+      openLinks.forEach(function (a) {
+        a.href = editorUrl;
+      });
     })();
   </script>
 </body>
