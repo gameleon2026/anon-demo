@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,14 +22,14 @@
       color-scheme: dark;
       --bg: #dbe2f2;
       --bg2: #9ab0de;
-      --card: rgba(255, 255, 255, 0.06);
-      --card-hover: rgba(255, 255, 255, 0.1);
-      --border: rgba(255, 255, 255, 0.12);
+      --card: rgba(255,255,255,0.06);
+      --card-hover: rgba(255,255,255,0.1);
+      --border: rgba(255,255,255,0.12);
       --text: #f5f7fb;
       --muted: #a6b0c3;
       --accent: #72a5ff;
       --accent2: #8d7dff;
-      --shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+      --shadow: 0 10px 40px rgba(0,0,0,0.35);
       --radius: 22px;
     }
 
@@ -46,8 +45,8 @@
       margin: 0;
       font-family: "Inter", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(140, 180, 255, 0.26), transparent 34%),
-        radial-gradient(circle at top right, rgba(170, 150, 255, 0.22), transparent 32%),
+        radial-gradient(circle at top left, rgba(140,180,255,0.26), transparent 34%),
+        radial-gradient(circle at top right, rgba(170,150,255,0.22), transparent 32%),
         linear-gradient(180deg, #151b2a 0%, #1e2738 100%);
       color: var(--text);
       line-height: 1.7;
@@ -58,8 +57,8 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
       background-size: 42px 42px;
       mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
       pointer-events: none;
@@ -83,8 +82,8 @@
       gap: 8px;
       padding: 8px 16px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
       color: var(--muted);
       backdrop-filter: blur(10px);
       font-size: 0.92rem;
@@ -99,7 +98,6 @@
       max-width: 980px;
       font-weight: 800;
     }
-
     .hero .title-sub {
       display: inline-block;
       font-size: 0.82em;
@@ -194,8 +192,8 @@
     }
 
     .module {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 28px;
       padding: 30px;
       backdrop-filter: blur(16px);
@@ -225,9 +223,9 @@
     .pill {
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(114, 165, 255, 0.12);
+      background: rgba(114,165,255,0.12);
       color: #c7dbff;
-      border: 1px solid rgba(114, 165, 255, 0.2);
+      border: 1px solid rgba(114,165,255,0.2);
       font-size: 0.86rem;
       white-space: nowrap;
     }
@@ -248,29 +246,27 @@
       position: relative;
       overflow: hidden;
       border-radius: 22px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.08);
       background:
         linear-gradient(145deg,
-          rgba(255, 255, 255, 0.06),
-          rgba(255, 255, 255, 0.02));
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.02));
       transition: 0.3s ease;
       cursor: pointer;
     }
-
     .slot.ply-slot {
       cursor: grab;
     }
-
     .slot.ply-slot:active {
       cursor: grabbing;
     }
 
     .slot:hover {
       transform: translateY(-6px);
-      border-color: rgba(114, 165, 255, 0.4);
+      border-color: rgba(114,165,255,0.4);
       box-shadow:
-        0 0 0 1px rgba(114, 165, 255, 0.2),
-        0 20px 40px rgba(0, 0, 0, 0.4);
+        0 0 0 1px rgba(114,165,255,0.2),
+        0 20px 40px rgba(0,0,0,0.4);
     }
 
     .slot::before {
@@ -278,10 +274,12 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(135deg,
-          rgba(114, 165, 255, 0.12),
+        linear-gradient(
+          135deg,
+          rgba(114,165,255,0.12),
           transparent 45%,
-          rgba(141, 125, 255, 0.08));
+          rgba(141,125,255,0.08)
+        );
       opacity: 0.9;
     }
 
@@ -294,23 +292,19 @@
       height: 100%;
       padding: 22px;
     }
-
     .ply-viewer {
       position: absolute;
       inset: 0;
       z-index: 1;
     }
-
     .ply-viewer canvas {
       width: 100%;
       height: 100%;
       display: block;
     }
-
     .slot.ply-slot .slot-content {
       pointer-events: none;
     }
-
     .viewer-status {
       position: absolute;
       inset: 0;
@@ -341,9 +335,9 @@
       width: fit-content;
       padding: 6px 12px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255,255,255,0.08);
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.08);
       color: #d8e4ff;
       font-size: 0.8rem;
       margin-bottom: 12px;
@@ -364,7 +358,7 @@
     footer {
       margin-top: 90px;
       padding: 28px 0 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255,255,255,0.08);
       color: var(--muted);
       display: flex;
       justify-content: space-between;
@@ -423,8 +417,8 @@
 
       <p class="hero-desc">
         The first compressed 3D data-to-Gaussians coding system for real-time
-        playback. The system changes the terminal decoded representation from
-        reconstructed colored point clouds to Gaussian primitives,
+        playback. The system changes the terminal decoded representation from 
+        reconstructed colored point clouds to Gaussian primitives, 
         allowing the compressed representation to directly serve the final screen-space display.
       </p>
 
@@ -439,9 +433,8 @@
           Visual Demonstrations
         </h2>
         <p class="section-desc">
-          This page presents the results of Gameleon, including both static and dynamic showcases.
-          The static showcase supports free-viewpoint viewing, while the dynamic showcase is presented as videos only
-          due to web resource limitations.
+          This page presents the results of Gameleon, including both static and dynamic showcases. 
+          The static showcase supports free-viewpoint viewing, while the dynamic showcase is presented as videos only due to web resource limitations.
         </p>
       </div>
 
@@ -588,22 +581,10 @@
           ignoreDevicePixelRatio: false
         });
 
-        const scene = await splatViewer.addSplatScene(
-          "dataset/stable/test.ply",
-          {
-            showLoadingUI: false,
-            progressiveLoad: true
-          }
-        );
-
-        // 放大
-        scene.scale.set(8, 8, 8);
-
-        // 上下翻转
-        scene.rotation.x = Math.PI;
-
-        // 调整位置（可选）
-        scene.position.set(0, -1, 0);
+        await splatViewer.addSplatScene("dataset/stable/test.ply", {
+          showLoadingUI: false,
+          progressiveLoad: true
+        });
 
         splatViewer.start();
         status.remove();
@@ -614,5 +595,5 @@
     }
   </script>
 </body>
-
 </html>
+
