@@ -290,7 +290,6 @@
       position: absolute;
       inset: 0;
       z-index: 1;
-      overflow: hidden;
     }
     .ply-viewer canvas,
     .ply-viewer iframe {
@@ -298,43 +297,6 @@
       height: 100%;
       display: block;
       border: 0;
-    }
-    /*
-      Cross-origin iframe: we cannot hide SuperSplat DOM from outside.
-      These masks only cover the chrome visually (logo strip + bottom toolbar).
-      Adjust --mask-top / --mask-bottom if your layout differs.
-    */
-    .ply-viewer--chrome-hide {
-      --mask-top: 52px;
-      --mask-bottom: 78px;
-    }
-    .iframe-chrome-mask {
-      position: absolute;
-      left: 0;
-      right: 0;
-      z-index: 8;
-      pointer-events: auto;
-      box-sizing: border-box;
-    }
-    .iframe-chrome-mask--top {
-      top: 0;
-      height: var(--mask-top);
-      background: linear-gradient(
-        180deg,
-        rgba(14, 16, 22, 0.97) 0%,
-        rgba(14, 16, 22, 0.85) 70%,
-        rgba(14, 16, 22, 0) 100%
-      );
-    }
-    .iframe-chrome-mask--bottom {
-      bottom: 0;
-      height: var(--mask-bottom);
-      background: linear-gradient(
-        0deg,
-        rgba(14, 16, 22, 0.97) 0%,
-        rgba(14, 16, 22, 0.88) 65%,
-        rgba(14, 16, 22, 0) 100%
-      );
     }
     .slot.ply-slot .slot-content {
       pointer-events: none;
@@ -479,7 +441,7 @@
           <div class="grid-static">
 
             <div class="slot static ply-slot" id="test-slot">
-              <div class="ply-viewer ply-viewer--chrome-hide">
+              <div class="ply-viewer">
                 <iframe
                   id="supersplat-frame"
                   title="test — SuperSplat viewer"
@@ -487,8 +449,6 @@
                   referrerpolicy="no-referrer-when-downgrade"
                   allow="fullscreen; xr-spatial-tracking"
                 ></iframe>
-                <div class="iframe-chrome-mask iframe-chrome-mask--top" aria-hidden="true"></div>
-                <div class="iframe-chrome-mask iframe-chrome-mask--bottom" aria-hidden="true"></div>
               </div>
               <div class="slot-content">
                 <div class="slot-title">TEST</div>
