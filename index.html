@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-language" content="en">
   <title>Gameleon | Anonymous Project Page</title>
 
   <!-- Font -->
@@ -559,7 +560,10 @@
       if (!frame || !openLink) return;
 
       var plyUrl = new URL("dataset/stable/test.ply", window.location.href).href;
-      var editorUrl = "https://superspl.at/editor?load=" + encodeURIComponent(plyUrl);
+      var editor = new URL("https://superspl.at/editor");
+      editor.searchParams.set("load", plyUrl);
+      editor.searchParams.set("lng", "en");
+      var editorUrl = editor.toString();
 
       frame.src = editorUrl;
       openLink.href = editorUrl;
