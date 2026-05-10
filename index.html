@@ -679,6 +679,8 @@
 
   <script>
     (function () {
+      // Bump when you replace dataset PLYs so browsers don’t keep a bad 304/206 response.
+      var PLY_ASSET_VERSION = "1";
       // SuperSplat (PlayCanvas): load PLY via ?load= — see
       // https://developer.playcanvas.com/user-manual/gaussian-splatting/editing/supersplat/
       // Each iframe uses data-ply="relative/path.ply"; same SuperSplat URL is set on that card’s link.
@@ -686,10 +688,15 @@
         var rel = frame.getAttribute("data-ply");
         if (!rel) return;
 
-        var plyUrl = new URL(rel, window.location.href).href;
+        var ply = new URL(rel, window.location.href);
+        ply.searchParams.set("v", PLY_ASSET_VERSION);
+        var plyUrl = ply.href;
         var editor = new URL("https://gameleon2026.github.io/render/index.html");
         editor.searchParams.set("load", plyUrl);
         editor.searchParams.set("lng", "en");
+        // Hide SuperSplat bottom + right toolbars in embedded demo (requires fork build with ui.* config).
+        editor.searchParams.set("ui.showBottomToolbar", "false");
+        editor.searchParams.set("ui.showRightToolbar", "false");
         var editorUrl = editor.toString();
 
         frame.src = editorUrl;
