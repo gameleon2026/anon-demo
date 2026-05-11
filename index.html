@@ -180,7 +180,7 @@
     .visual-result-caption {
       margin: 18px 0 0;
       padding: 0 6px;
-      font-size: 25px;
+      font-size: 22px;
       font-weight: 500;
       line-height: 1.68;
       color: var(--text);
@@ -250,6 +250,8 @@
 
     .section-header {
       margin-bottom: 26px;
+      font-size: 22px;
+      font-weight: 500;
     }
 
     .section-label {
@@ -273,9 +275,10 @@
 
     .section-desc {
       margin-top: 14px;
-      color: var(--muted);
+      color: var(--text);
       max-width: 720px;
-      font-size: 1.05rem;
+      font-size: 22px;
+      font-weight: 500;
     }
 
     /* Showcase */
@@ -306,16 +309,24 @@
     .module h3 {
       margin: 0;
       font-family: var(--font-serif);
-      font-size: 1.28rem;
+      font-size: 22px;
       font-weight: 700;
       letter-spacing: -0.015em;
     }
 
-    .module p {
+    .module-head p {
       margin: 6px 0 0;
       color: var(--muted);
       font-size: 1.02rem;
       line-height: 1.68;
+    }
+
+    .showcase > .module:nth-child(1) .module-head p {
+      font-size: 20px;
+    }
+
+    .showcase > .module:nth-child(2) .module-head p {
+      color: var(--text);
     }
 
     .pill {
@@ -588,10 +599,10 @@
         <h2 class="section-title">
           Visual Demonstrations
         </h2>
-        <p class="section-desc">
+        <!-- <p class="section-desc">
           This page presents the results of Gameleon, including both static and dynamic showcases. 
           The static showcase supports free-viewpoint viewing, while the dynamic showcase is presented as videos only due to web resource limitations.
-        </p>
+        </p> -->
       </div>
 
       <div class="showcase">
