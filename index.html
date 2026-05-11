@@ -316,17 +316,9 @@
 
     .module-head p {
       margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 1.02rem;
-      line-height: 1.68;
-    }
-
-    .showcase > .module:nth-child(1) .module-head p {
-      font-size: 20px;
-    }
-
-    .showcase > .module:nth-child(2) .module-head p {
       color: var(--text);
+      font-size: 20px;
+      line-height: 1.68;
     }
 
     .pill {
@@ -579,8 +571,11 @@
             decoding="async"
           >
         </div>
+        <h2 class="section-title">
+          Rendering Visualization Comparison
+        </h2>
         <figcaption id="visual-result-caption" class="visual-result-caption">
-          <span class="visual-result-lead">Rendering Visualization Comparison.</span>
+          <!-- <span class="visual-result-lead">.</span> -->
           Top row: 8iVFB Redandblack sample. Bottom row: THuman sample.
           Columns from left to right: Ground Truth, G-PCC (OpenGL/Gaussian), Unicorn (OpenGL/Gaussian), B2P (G-PCC), and Gameleon (Ours).
         </figcaption>
