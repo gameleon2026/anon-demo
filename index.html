@@ -152,12 +152,12 @@
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
     }
 
-    .visual-result-frame iframe {
+    .visual-result-frame img {
       display: block;
       width: 100%;
-      min-height: min(68vh, 820px);
+      height: auto;
       border: 0;
-      background: linear-gradient(180deg, #fbfcfe 0%, #f4f7fd 100%);
+      background: #fafbfc;
     }
 
     .visual-result-caption {
@@ -484,10 +484,6 @@
         padding-top: 70px;
       }
 
-      .visual-result-frame iframe {
-        min-height: 52vh;
-      }
-
       .grid-static,
       .grid-dynamic {
         grid-template-columns: 1fr;
@@ -529,15 +525,16 @@
 
     </section>
 
-    <!-- Rendering comparison (PDF figure) -->
+    <!-- Rendering comparison figure -->
     <section class="visual-result-section" aria-labelledby="visual-result-caption">
       <figure class="visual-result-block">
         <div class="visual-result-frame">
-          <iframe
-            src="paper/visual_result.pdf"
-            title="Rendering Visualization Comparison (PDF)"
+          <img
+            src="paper/visual_result.jpg"
+            alt="Rendering visualization comparison: 8iVFB red_and_black (top) and THuman (bottom) across Ground Truth, G-PCC, Unicorn, B2P, and Gameleon."
             loading="lazy"
-          ></iframe>
+            decoding="async"
+          >
         </div>
         <figcaption id="visual-result-caption" class="visual-result-caption">
           <span class="visual-result-lead">Rendering Visualization Comparison.</span>
@@ -545,8 +542,8 @@
           Columns from left to right: Ground Truth, G-PCC (OpenGL/Gaussian), Unicorn (OpenGL/Gaussian), B2P (G-PCC), and Gameleon (Ours).
         </figcaption>
         <p class="visual-result-meta">
-          If the figure does not appear in your browser,
-          <a href="paper/visual_result.pdf" target="_blank" rel="noopener">open the PDF in a new tab</a>.
+          <a href="paper/visual_result.jpg" target="_blank" rel="noopener">Open full-resolution figure</a>
+          in a new tab.
         </p>
       </figure>
     </section>
