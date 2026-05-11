@@ -235,7 +235,7 @@
 
     .grid-static {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
@@ -412,6 +412,10 @@
       .hero-card {
         grid-template-columns: 1fr;
       }
+
+      .grid-static {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 640px) {
@@ -560,12 +564,11 @@
               </div>
             </div>
 
-            <!-- TEST 05 / TEST 06 — temporarily hidden
             <div class="slot static ply-slot">
               <div class="ply-viewer">
                 <iframe
                   class="supersplat-frame"
-                  data-ply="dataset/stable/test.ply"
+                  data-ply="dataset/stable/soldier_vox10_0690_ours_m8_decoded_gaussians.ply"
                   title="TEST 05 — SuperSplat viewer"
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
@@ -582,7 +585,7 @@
               <div class="ply-viewer">
                 <iframe
                   class="supersplat-frame"
-                  data-ply="dataset/stable/test.ply"
+                  data-ply="dataset/stable/soldier_vox10_0690_ours_m8_decoded_gaussians.ply"
                   title="TEST 06 — SuperSplat viewer"
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
@@ -594,7 +597,6 @@
                 <div class="slot-sub"><a class="supersplat-open" href="#" target="_blank" rel="noopener">Open in a separate window</a></div>
               </div>
             </div>
-            -->
 
           </div>
 
