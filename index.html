@@ -30,6 +30,9 @@
       --radius: 22px;
       /* Match hero subtitle (second title line) */
       --title-sub-size: 34px;
+      /* Academic body copy (aligned across hero, figure caption, showcase intros) */
+      --prose-academic-size: 1rem;
+      --prose-academic-leading: 1.6;
     }
 
     * {
@@ -120,21 +123,26 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    /* Academic body: hero intro, comparison caption, showcase module intros (same as third reference block) */
+    .hero-desc,
+    .visual-result-caption,
+    .module-head p {
+      font-family: var(--font-serif);
+      color: var(--text);
+      font-size: var(--prose-academic-size);
+      font-weight: 400;
+      line-height: var(--prose-academic-leading);
+      text-align: left;
+      hyphens: none;
+      -webkit-hyphens: none;
+      overflow-wrap: break-word;
+    }
+
     .hero-desc {
       margin-top: 26px;
       max-width: 100%;
       width: 100%;
-      font-family: var(--font-serif);
-      color: var(--text);
-      font-size: 22px;
-      font-weight: 500;
-      line-height: 1.65;
-      text-align: justify;
-      text-align-last: left;
-      hyphens: auto;
-      -webkit-hyphens: auto;
-      overflow-wrap: break-word;
-      text-wrap: pretty;
     }
 
     /* Full-width figure between hero and results */
@@ -182,20 +190,9 @@
     .visual-result-caption {
       margin: 18px 0 0;
       padding: 0;
-      font-family: var(--font-serif);
-      font-size: 22px;
-      font-weight: 500;
-      line-height: 1.68;
-      color: var(--text);
       width: 100%;
       max-width: 100%;
       letter-spacing: 0;
-      text-align: justify;
-      text-align-last: left;
-      hyphens: auto;
-      -webkit-hyphens: auto;
-      overflow-wrap: break-word;
-      text-wrap: pretty;
     }
 
     .visual-result-meta {
@@ -284,19 +281,17 @@
 
     .section-desc {
       margin-top: 14px;
-      color: var(--text);
       max-width: 100%;
       width: 100%;
       font-family: var(--font-serif);
-      font-size: 22px;
-      font-weight: 500;
-      line-height: 1.65;
-      text-align: justify;
-      text-align-last: left;
-      hyphens: auto;
-      -webkit-hyphens: auto;
+      color: var(--text);
+      font-size: var(--prose-academic-size);
+      font-weight: 400;
+      line-height: var(--prose-academic-leading);
+      text-align: left;
+      hyphens: none;
+      -webkit-hyphens: none;
       overflow-wrap: break-word;
-      text-wrap: pretty;
     }
 
     /* Showcase */
@@ -370,16 +365,6 @@
 
     .module-head p {
       margin: 6px 0 0;
-      font-family: var(--font-serif);
-      color: var(--text);
-      font-size: 20px;
-      line-height: 1.68;
-      text-align: justify;
-      text-align-last: left;
-      hyphens: auto;
-      -webkit-hyphens: auto;
-      overflow-wrap: break-word;
-      text-wrap: pretty;
     }
 
     .pill {
@@ -657,7 +642,7 @@
         <figcaption id="visual-result-caption" class="visual-result-caption">
           <!-- <span class="visual-result-lead">.</span> -->
           Top row: 8iVFB Redandblack sample. Bottom row: THuman sample.
-          Columns from left to right: Ground Truth, G-PCC (OpenGL/Gaussian), Unicorn (OpenGL/Gaussian), B2P (G-PCC), and Gameleon (Ours).
+          Columns from left to right: Ground Truth, G&#8209;PCC (OpenGL/Gaussian), Unicorn (OpenGL/Gaussian), B2P (G&#8209;PCC), and Gameleon (Ours).
         </figcaption>
         <!-- <p class="visual-result-meta">
           <a href="paper/visual_result.jpg" target="_blank" rel="noopener">Open full-resolution figure</a>
