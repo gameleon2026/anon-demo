@@ -128,6 +128,7 @@
       color: var(--text);
       font-size: 20px;
       font-weight: 400;
+      font-style: italic;
       line-height: 1.65;
       text-align: justify;
       text-align-last: left;
@@ -135,6 +136,18 @@
       -webkit-hyphens: auto;
       overflow-wrap: break-word;
       text-wrap: pretty;
+    }
+
+    .hero-desc::before {
+      content: "\201C";
+      font-style: normal;
+      color: var(--muted);
+    }
+
+    .hero-desc::after {
+      content: "\201D";
+      font-style: normal;
+      color: var(--muted);
     }
 
     /* Full-width figure between hero and results */
