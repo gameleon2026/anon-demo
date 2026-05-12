@@ -16,8 +16,8 @@
       color-scheme: light;
       --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
       --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-      --bg: #eef2fb;
-      --bg2: #dce6f7;
+      --bg: #ffffff;
+      --bg2: #ffffff;
       --surface: rgba(255,255,255,0.92);
       --card: rgba(255,255,255,0.88);
       --card-hover: rgba(255,255,255,1);
@@ -42,10 +42,7 @@
       margin: 0;
       font-family: var(--font-serif);
       font-optical-sizing: auto;
-      background:
-        radial-gradient(ellipse 120% 80% at 15% -10%, rgba(147, 197, 253, 0.45), transparent 50%),
-        radial-gradient(ellipse 90% 70% at 92% 8%, rgba(196, 181, 253, 0.35), transparent 48%),
-        linear-gradient(180deg, #f4f7fd 0%, #e8eef9 45%, #dfe8f5 100%);
+      background: #ffffff;
       color: var(--text);
       line-height: 1.72;
       overflow-x: hidden;
@@ -53,16 +50,7 @@
     }
 
     .bg-grid {
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(30, 58, 95, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(30, 58, 95, 0.06) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: radial-gradient(circle at center, black 35%, transparent 78%);
-      pointer-events: none;
-      z-index: -1;
-      opacity: 0.65;
+      display: none;
     }
 
     .container {
