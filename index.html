@@ -292,6 +292,36 @@
       gap: 28px;
     }
 
+    /* Showcase: no outer rounded card — content aligns with page */
+    .showcase > .module {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
+    .showcase .module-head {
+      margin-bottom: 28px;
+    }
+
+    .showcase .slot {
+      border-radius: 0;
+    }
+
+    .showcase .slot:hover {
+      transform: none;
+      border-color: rgba(37, 99, 235, 0.22);
+      box-shadow: 0 10px 28px rgba(30, 58, 95, 0.08);
+    }
+
+    .showcase .dynamic-showcase {
+      border: 0;
+      box-shadow: none;
+      background: transparent;
+    }
+
     .module {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -552,10 +582,6 @@
 
       .grid-static {
         grid-template-columns: 1fr;
-      }
-
-      .module {
-        padding: 22px;
       }
 
       .slot.static {
