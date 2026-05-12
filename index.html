@@ -28,6 +28,8 @@
       --accent2: #6366f1;
       --shadow: 0 12px 40px rgba(30, 58, 95, 0.08);
       --radius: 22px;
+      /* Match hero subtitle (second title line) */
+      --title-sub-size: 34px;
     }
 
     * {
@@ -99,7 +101,7 @@
       display: block;
       width: 100%;
       max-width: none;
-      font-size: 34px;
+      font-size: var(--title-sub-size);
       line-height: 1.35;
       letter-spacing: -0.01em;
       margin-top: 12px;
@@ -273,11 +275,11 @@
 
     .section-title {
       font-family: var(--font-serif);
-      font-size: clamp(1.55rem, 2.8vw, 2.35rem);
+      font-size: var(--title-sub-size);
       font-weight: 700;
-      line-height: 1.18;
+      line-height: 1.35;
       margin: 0;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
 
     .section-desc {
