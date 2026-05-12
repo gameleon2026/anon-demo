@@ -198,6 +198,7 @@
       font-family: var(--font-serif);
       font-size: 20px;
       font-weight: 400;
+      font-style: italic;
       line-height: 1.68;
       color: var(--text);
       width: 100%;
@@ -209,6 +210,35 @@
       -webkit-hyphens: auto;
       overflow-wrap: break-word;
       text-wrap: pretty;
+    }
+
+    .visual-result-caption::before {
+      content: "\201C";
+      font-style: normal;
+      color: var(--muted);
+    }
+
+    .visual-result-caption::after {
+      content: "\201D";
+      font-style: normal;
+      color: var(--muted);
+    }
+
+    .visual-result-caption-title {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .visual-result-caption-a {
+      color: #b91c1c;
+    }
+
+    .visual-result-caption-b {
+      color: #1d4ed8;
+    }
+
+    .visual-result-caption-c {
+      color: #15803d;
     }
 
     .visual-result-meta {
@@ -668,9 +698,13 @@
           >
         </div>
         <figcaption id="visual-result-caption" class="visual-result-caption">
-          <!-- <span class="visual-result-lead">.</span> -->
-          Rendering Visualization Comparison:(a) Top row: 8iVFB Redandblack sample. (b) Bottom row: THuman sample.
-          (c)Columns from left to right: Ground Truth, G-PCC (OpenGL/Gaussian), Unicorn (OpenGL/Gaussian), B2P (G-PCC), and Gameleon (Ours).
+          <span class="visual-result-caption-title">Rendering Visualization Comparison:</span>
+          <span class="visual-result-caption-a">(a) Top row:</span>
+          8iVFB Redandblack sample.
+          <span class="visual-result-caption-b">(b) Bottom row:</span>
+          THuman sample.
+          <span class="visual-result-caption-c">(c) Columns from left to right:</span>
+          Ground Truth, G-PCC (OpenGL/Gaussian), Unicorn (OpenGL/Gaussian), B2P (G-PCC), and Gameleon (Ours).
         </figcaption>
         <!-- <p class="visual-result-meta">
           <a href="paper/visual_result.jpg" target="_blank" rel="noopener">Open full-resolution figure</a>
