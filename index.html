@@ -525,14 +525,14 @@
       border-radius: 0;
       border: 1px solid var(--border);
       overflow: hidden;
-      background: #0a0f18;
+      background: #ffffff;
       box-shadow: var(--shadow);
     }
 
     .dynamic-player-shell {
       position: relative;
       aspect-ratio: 16 / 9;
-      background: #0e1525;
+      background: #ffffff;
     }
 
     .dynamic-player-shell video {
@@ -544,7 +544,7 @@
 
     .dynamic-track-strip {
       display: flex;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid var(--border);
     }
 
     .dynamic-track-btn {
@@ -553,23 +553,23 @@
       margin: 0;
       border: 0;
       cursor: pointer;
-      font-family: var(--font-sans);
+      font-family: var(--font-serif);
       font-size: 0.95rem;
       font-weight: 600;
       letter-spacing: 0.02em;
-      color: rgba(255, 255, 255, 0.5);
-      background: rgba(18, 24, 40, 0.98);
+      color: rgba(20, 27, 46, 0.55);
+      background: #ffffff;
       padding: 14px 12px;
       transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .dynamic-track-btn + .dynamic-track-btn {
-      border-left: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 1px solid var(--border);
     }
 
     .dynamic-track-btn:hover {
-      color: rgba(255, 255, 255, 0.88);
-      background: rgba(28, 36, 58, 0.98);
+      color: var(--text);
+      background: rgba(20, 27, 46, 0.04);
     }
 
     .dynamic-track-btn:focus-visible {
@@ -579,9 +579,9 @@
     }
 
     .dynamic-track-btn.is-active {
-      color: #fff;
-      background: rgba(36, 48, 78, 0.99);
-      box-shadow: inset 0 3px 0 rgba(99, 102, 241, 0.45);
+      color: var(--text);
+      background: rgba(37, 99, 235, 0.06);
+      box-shadow: inset 0 -3px 0 var(--accent);
     }
 
     .slot-tag {
