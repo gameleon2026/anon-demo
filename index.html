@@ -150,6 +150,39 @@
       color: var(--muted);
     }
 
+    /* Overall demo video between hero intro and Comparison */
+    .hero-demo-video {
+      margin: 8px 0 32px;
+    }
+
+    .hero-demo-video-frame {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      max-width: 100%;
+    }
+
+    .hero-demo-video-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    }
+
+    .hero-demo-video-frame video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      background: #0f172a;
+    }
+
     /* Full-width figure between hero and results */
     .visual-result-section {
       margin-top: 0;
@@ -667,6 +700,14 @@
         without reconstructing intermediate point clouds.
       </p>
 
+    </section>
+
+    <section class="hero-demo-video" aria-label="Overall dynamic showcase video">
+      <div class="hero-demo-video-frame">
+        <video controls playsinline preload="metadata">
+          <source src="dataset/dynamic/overall.mp4" type="video/mp4">
+        </video>
+      </div>
     </section>
 
     <!-- Rendering comparison figure -->
