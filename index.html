@@ -150,9 +150,9 @@
       color: var(--muted);
     }
 
-    /* Overall demo video between hero intro and Comparison */
-    .hero-demo-video {
-      margin: 8px 0 32px;
+    /* Overall demo video (Overview section) */
+    .visual-result-section.overview-section {
+      margin-bottom: 32px;
     }
 
     .hero-demo-video-frame {
@@ -702,7 +702,10 @@
 
     </section>
 
-    <section class="hero-demo-video" aria-label="Overall dynamic showcase video">
+    <section class="visual-result-section overview-section" aria-labelledby="overview-heading">
+      <h2 class="section-title" id="overview-heading">
+        Overview
+      </h2>
       <div class="hero-demo-video-frame">
         <video controls playsinline autoplay loop muted preload="metadata">
           <source src="dataset/dynamic/overall.mp4" type="video/mp4">
