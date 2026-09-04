@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-language" content="en">
-  <title>Gameleon | Anonymous Project Page</title>
+  <title>Gameleon | Gaussianizing Point Clouds for On-Demand 4D Performance</title>
 
   <!-- Font: serif body (paper-like) + sans for small UI / captions -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,8 +69,9 @@
 
     /* Hero */
     .hero {
-      padding: 90px 0 20px;
+      padding: 56px 0 20px;
       position: relative;
+      text-align: center;
     }
 
     .badge {
@@ -88,10 +89,10 @@
     }
 
     .hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(2.35rem, 4.6vw, 4.25rem);
-      line-height: 1.12;
-      letter-spacing: -0.025em;
+      font-family: var(--font-sans);
+      font-size: 64px;
+      line-height: 1.08;
+      letter-spacing: 0;
       margin: 0;
       max-width: none;
       width: 100%;
@@ -100,45 +101,86 @@
     }
     .hero .title-sub {
       display: block;
-      width: 100%;
       max-width: none;
-      font-size: var(--title-sub-size);
-      line-height: 1.35;
-      letter-spacing: -0.01em;
-      margin-top: 12px;
+      margin: 12px auto 0;
+      font-family: var(--font-sans);
+      font-size: 31px;
+      line-height: 1.24;
+      letter-spacing: 0;
       color: var(--text);
-      font-weight: 900;
-    }
-
-    @media (min-width: 900px) {
-      .hero .title-sub {
-        white-space: nowrap;
-      }
+      font-weight: 600;
     }
 
     .hero .highlight {
-      background: linear-gradient(90deg, #1d4ed8, #3b82f6, #6366f1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #262b33;
+    }
+
+    .hero-venue {
+      margin: 16px 0 0;
+      color: #3f4650;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .hero-authors {
+      margin: 18px 0 0;
+      color: #1683cf;
+      font-family: var(--font-sans);
+      font-size: 1.02rem;
+      font-weight: 400;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .hero-authors a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hero-authors a:hover {
+      text-decoration: underline;
+    }
+
+    .hero-affiliations {
+      margin: 2px 0 0;
+      color: #3f4650;
+      font-family: var(--font-sans);
+      font-size: 0.94rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .hero-author-note {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-style: italic;
+      text-align: center;
     }
 
     .hero-code-wrap {
-      margin-top: 20px;
-      text-align: center;
+      margin-top: 17px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .hero-code-btn {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      padding: 12px 26px 12px 20px;
+      padding: 10px 20px;
       border-radius: 999px;
       background: #2d333b;
       color: #ffffff;
       font-family: var(--font-sans);
-      font-size: 1.08rem;
+      font-size: 0.96rem;
       font-weight: 600;
-      letter-spacing: 0.02em;
+      letter-spacing: 0;
       text-decoration: none;
       border: 0;
       line-height: 1;
@@ -163,34 +205,27 @@
       display: block;
     }
 
+    .paper-overview-frame {
+      border-radius: 8px;
+      box-shadow: none;
+    }
+
     .hero-desc {
-      margin-top: 26px;
-      max-width: 100%;
-      width: 100%;
-      font-family: var(--font-serif);
-      color: var(--text);
-      font-size: 20px;
+      margin: 28px auto 0;
+      max-width: 1000px;
+      width: auto;
+      font-family: var(--font-sans);
+      color: #3f4650;
+      font-size: 16px;
       font-weight: 400;
-      font-style: italic;
-      line-height: 1.65;
-      text-align: justify;
-      text-align-last: left;
-      hyphens: auto;
-      -webkit-hyphens: auto;
-      overflow-wrap: break-word;
-      text-wrap: pretty;
+      font-style: normal;
+      line-height: 1.55;
+      text-align: center;
     }
 
-    .hero-desc::before {
-      content: "\201C";
-      font-style: normal;
-      color: var(--muted);
-    }
-
-    .hero-desc::after {
-      content: "\201D";
-      font-style: normal;
-      color: var(--muted);
+    .hero-desc strong {
+      color: #262b33;
+      font-weight: 700;
     }
 
     /* Overall demo video (Overview section) */
@@ -710,7 +745,28 @@
 
     @media (max-width: 640px) {
       .hero {
-        padding-top: 70px;
+        padding-top: 50px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .hero .title-sub {
+        max-width: 350px;
+        font-size: 25px;
+      }
+
+      .hero-venue {
+        font-size: 0.96rem;
+      }
+
+      .hero-authors {
+        font-size: 0.94rem;
+      }
+
+      .hero-affiliations {
+        font-size: 0.84rem;
       }
 
       .grid-static {
@@ -737,7 +793,31 @@
         <span class="title-sub">Gaussianizing Point Clouds for On-Demand 4D Performance</span>
       </h1>
 
+      <p class="hero-venue">SIGGRAPH Asia 2026 Conference Papers</p>
+
+      <p class="hero-authors">
+        <a href="https://orcid.org/0009-0007-3743-918X">Zehong Li</a><sup>1</sup>,
+        <a href="https://orcid.org/0009-0004-8786-8722">Jinyang Li</a><sup>2</sup>,
+        <a href="https://orcid.org/0000-0003-4919-4515">Yueyu Hu</a><sup>3</sup>,
+        <a href="https://orcid.org/0000-0003-2911-1321">Dandan Ding</a><sup>1,&#8224;</sup>,
+        <a href="https://orcid.org/0000-0003-3686-4057">Zhan Ma</a><sup>2</sup>
+      </p>
+      <p class="hero-affiliations">
+        <sup>1</sup>Hangzhou Normal University &nbsp;&nbsp;
+        <sup>2</sup>Nanjing University &nbsp;&nbsp;
+        <sup>3</sup>New York University
+      </p>
+      <p class="hero-author-note"><sup>&#8224;</sup> Corresponding author</p>
+
       <div class="hero-code-wrap">
+        <a
+          class="hero-code-btn"
+          href="paper/Gameleon_camera_ready.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Paper
+        </a>
         <a
           class="hero-code-btn"
           href="https://github.com/3dpcc/Gameleon"
@@ -751,10 +831,21 @@
       </div>
 
       <p class="hero-desc">
-        The first 3D data-to-Gaussian compression system for real-time on-demand streaming, termed Gameleon, 
-        which directly decodes compressed 3D data into render-ready Gaussian primitives without reconstructing intermediate point clouds.
+        <strong>TL;DR:</strong> Gameleon directly decodes compressed 3D data into render-ready Gaussian primitives for real-time on-demand streaming, without reconstructing intermediate point clouds.
       </p>
 
+    </section>
+
+    <section class="visual-result-section" aria-label="Gameleon system overview">
+      <figure class="visual-result-block">
+        <div class="visual-result-frame paper-overview-frame">
+          <img
+            src="paper/system_overview.png"
+            alt="Gameleon system overview from 4D input through geometry and Gaussian decoding to free-viewpoint rendering"
+            decoding="async"
+          >
+        </div>
+      </figure>
     </section>
 
     <section class="visual-result-section overview-section" aria-labelledby="overview-heading">
@@ -1074,4 +1165,3 @@
   </script>
 </body>
 </html>
-
